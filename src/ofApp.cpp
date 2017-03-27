@@ -14,10 +14,23 @@ std::mt19937 eng1(rd());
 
 std::uniform_int_distribution<> disx(0,1200);
 std::uniform_int_distribution<> disy(0,970);
+//uniform distribution above
+
+std::mt19937 eng2(1337);
+
+int meanx =1000;
+int sdx=15;
+
+int meany =800;
+int sdy=15;
+
+std::normal_distribution<float> disx2(meanx,sdx);
+std::normal_distribution<float> disy2(meany,sdy);
+//normal distribution above
 
 for (int i=0; i<20; i++){
-	X.push_back(disx(eng1));
-	Y.push_back(disy(eng1));
+	X.push_back(disx2(eng2));
+	Y.push_back(disy2(eng2));
    }
 }
 
